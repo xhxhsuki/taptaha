@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>注意事项</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <script>
+    ! function() {
+        function a() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b), b = setTimeout(a, 300)
+        }, !1), a()
+    }(window);
+    </script>
+    <style>
+    body {
+        padding: .5rem 0;
+    }
+    
+    .handbook {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .handbook img {
+        width: 6.2rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="handbook">
+        <img src="./images/pic_19.png" alt="">
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+
+</html>

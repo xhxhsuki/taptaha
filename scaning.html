@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>SCAN-BOX</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <script>
+    ! function() {
+        function a() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b), b = setTimeout(a, 300)
+        }, !1), a()
+    }(window);
+    </script>
+</head>
+
+<body>
+    <!-- 查看结果 -->
+    <div class="check-result" hidden>
+        <div class="total-type">
+            <img src="./images/pic_17.png" alt="">
+            <div class="type-text">您的身材属于<span class="body-type"><div class="cr-point"><span></span></div>微胖型</span>
+        </div>
+    </div>
+    <a class="reset-scan">重新扫描</a>
+    <a href="model.html" class="check-result-btn">查看结果</a>
+    </div>
+    <!-- 扫描中 -->
+    <div class="scaning">
+        <img src="./images/gif_2.gif" alt="">
+        <p>扫描中</p>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/swiper-3.4.2.jquery.min.js"></script>
+<script src="./js/swiper.animate1.0.2.min.js"></script>
+<script>
+// 扫描中   点。。。。
+function scaningPoint(time) {
+    var point = $(".scaning p"),
+        timer, timer1;
+    var count = 0;
+    point.find("span").remove();
+    timer = setInterval(function() {
+        if (count < 4) {
+            var a = "<span>.</span>";
+            point.append(a);
+            count++;
+        } else {
+            count = 0;
+            point.find("span").remove();
+        }
+    }, 500)
+    timer1 = setTimeout(function() {
+        count = 0;
+        $(".check-result").fadeIn(200);
+        $(".scaning").fadeOut(200);
+        clearInterval(timer);
+        clearTimeout(timer1);
+    }, time * 1000);
+}
+scaningPoint(10);
+// 点击重新扫描 
+$(".reset-scan").click(function() {
+    $(".scaning").fadeIn(200);
+    $(".check-result").fadeOut(200);
+    scaningPoint(10);
+})
+</script>
+<script src="./js/index.js"></script>
+
+</html>

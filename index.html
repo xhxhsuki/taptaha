@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>SCAN-BOX</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <script>
+    ! function() {
+        function a() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b), b = setTimeout(a, 300)
+        }, !1), a()
+    }(window);
+    </script>
+</head>
+
+<body>
+    <!-- loading -->
+    <div class="loading">
+        <div class="loadinginit">
+            <div class="partload" style="background:url(./images/pic_8.png) center center; background-size: cover;display: block;">
+                <div class="loadtext">
+                    <span class="tl"></span>
+                    <span class="tr"></span>
+                    <span class="bl"></span>
+                    <span class="br"></span>SCANBOX-国内领先的人体数字扫描仪
+                    <br>10秒迅速扫描抓取46个细分尺寸</div>
+            </div>
+            <div class="partload" style="background:url(./images/pic_9.png) center center; background-size: cover;">
+                <div class="loadtext">
+                    <span class="tl"></span>
+                    <span class="tr"></span>
+                    <span class="bl"></span>
+                    <span class="br"></span>云端实现量体分析
+                    <br>匹配并计算三维深度数据</div>
+            </div>
+            <div class="partload" style="background:url(./images/pic_1.png) center center; background-size: cover;">
+                <div class="loadtext">
+                    <span class="tl"></span>
+                    <span class="tr"></span>
+                    <span class="bl"></span>
+                    <span class="br"></span>最终形成整个三维人体数据模型</div>
+            </div>
+        </div>
+        <ul class="loadpoint">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- 进入时操作说明 -->
+    <div class="operation">
+        <div class="ope-head">
+            <img src="./images/scanbox.png" alt="">
+            <p>是麦梯定制旗下的移动量体仓</p>
+            <a class="skip">跳过</a>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-con">
+                        <img src="./images/pic_3.gif" alt="">
+                        <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s">双手握住把手，直视前方</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-con">
+                        <img src="./images/pic_10.gif" alt="">
+                        <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s">穿贴身衣物，拖鞋站在定位区域</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-con">
+                        <img src="./images/pic_11.png" style="top: -0.2rem;left: calc(50% - 1.72rem);width: 3.44rem;" alt="">
+                        <p class="ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.3s">扫描时，请保持静止不动</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a href="fill_info.html" class="nextbtn ope-next" style="display: none;">下一步</a>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/swiper-3.4.2.jquery.min.js"></script>
+<script src="./js/swiper.animate1.0.2.min.js"></script>
+<script>
+function loading() {
+    var count = 0,
+        timer;
+    var widthF = $(".partload").width();
+    var loadpoint = $(".loadpoint li");
+    $($(".partload")[0]).addClass("animated fadeIn");
+
+    timer = setInterval(function() {
+        if (count == 2) {
+            clearInterval(timer);
+            $(".loading").fadeOut();
+            return false;
+        }
+        $($(".partload")[count]).fadeOut(600);
+        $($(".partload")[count + 1]).fadeIn(800);
+        count++;
+        loadpoint.removeClass("active");
+        $(loadpoint[count]).addClass("active");
+    }, 3000)
+}
+
+function operationFun() {
+    // .......
+    var mySwiper;
+    setTimeout(function() {
+        mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            speed: 500,
+            effect: "slide",
+            loop: false,
+            autoplay: 3000,
+            pagination: '.swiper-pagination',
+            onAutoplay: function(swiper) {
+                if (swiper.activeIndex == 2) {
+                    swiper.stopAutoplay();
+                }
+            },
+            onInit: function(swiper) {
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function(swiper) {
+                swiperAnimate(swiper);
+                if (swiper.activeIndex == 2) {
+                    if ($(".ope-next").is(":visible")) return;
+                    $(".ope-next").show().addClass("animated fadeInUp");
+                }
+            }
+        })
+    }, 9500)
+
+    //跳过操作说明
+    $('.skip').click(function() {
+        mySwiper.slideTo(2, 500, true); //切换到第3个slide，速度为.5秒
+    })
+}
+loading();
+operationFun();
+</script>
+
+</html>

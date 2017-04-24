@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>MT-002</title>
+<meta name="viewport"
+    content="minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, initial-scale=1">
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+	<script src="js/Detector.js"></script>
+	<script src="js/libs/stats.min.js"></script>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="css/css-loader.css">
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/TweenMax.js"></script>
+	<script>
+    ! function() {
+        function a() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b), b = setTimeout(a, 300)
+        }, !1), a()
+    }(window);
+    </script>
+	<style>
+	body{
+		overflow:hidden;
+		background:#000;
+		margin: 0;
+	}
+	.u-sizebtn{
+		position: absolute;
+		width: 1.75rem;
+		height: 1.22rem;
+		font-size: .3rem;
+		background: rgba(2,68,94,0.9);
+		border: 1px solid rgba(0,219,245,0.4);
+		z-index: 10;
+		border-radius: 1px;
+		text-align: center;
+		color: #fff;
+	}
+	.u-sizebtn img{
+		height: .5rem;
+		margin-top: .16rem;
+	}
+	.u-sizebtn p{
+		margin: 0;
+	}
+	.u-sizebtn:nth-child(1){
+		left: .68rem;
+		bottom: .68rem;
+	}
+	.u-sizebtn:nth-child(2){
+		left: 2.85rem;
+		bottom: .68rem;
+	}
+	.u-sizebtn:nth-child(3){
+		left: 5rem;
+		bottom: .68rem;
+	}
+	.u-mask{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: #03112c;
+		display: none;
+		left: 0;
+		top: 0;
+		z-index: 21;
+	}
+	.look-total-slide{
+		z-index: 22;
+	}
+	.look-total-slide .swiper-container2 .swiper-pagination2 {
+	    position: absolute;
+	    bottom: 0rem;
+	    text-align: center;
+	}
+	</style>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="u-sizebtn look-total-btn" id="size-topleft"><img src="./images/up_body.png"><p>上身</p></div>
+	<div class="u-sizebtn look-total-btn" id="size-buttomleft"><img src="./images/down_body.png"><p>下身</p></div>
+	<div class="u-sizebtn look-total-btn" id="size-topright"><img src="./images/other.png"><p>其他</p></div>
+	<div class="u-mask"></div>
+	<div id="progress">
+		<div class="loader loader-bar is-active" data-text></div>
+	</div>
+	<div class="look-total-slide">
+        <a class="look-total-close">×</a>
+        <div class="swiper-container2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="door-box1">
+                        <div class="door-top"><img src="./images/pic_up_body.png" alt=""></div>
+                        <div class="inner-content">
+                            <ul>
+                                <li>领围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>头围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>中腰：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>大臀围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>肩宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>小臀围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>前肩宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>腕围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>前胸宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>后背宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                            </ul>
+                            <div class="edit-btn" style="display: block" onclick="clickEdit(this)">编辑</div>
+                            <div class="finish-btn" onclick="clickFinish(this)">完成</div>
+                        </div>
+                        <div class="door-bott"><img src="./images/pic_body1.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="door-box1">
+                        <div class="door-top"><img src="./images/pic_down_body.png" alt=""></div>
+                        <div class="inner-content">
+                            <ul>
+                                <li>肩宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>小臀围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>前肩宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>腕围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>前胸宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>后背宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                            </ul>
+                            <div class="edit-btn" style="display: block" onclick="clickEdit(this)">编辑</div>
+                            <div class="finish-btn" onclick="clickFinish(this)">完成</div>
+                        </div>
+                        <div class="door-bott"><img src="./images/pic_body1.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="door-box1">
+                        <div class="door-top"><img src="./images/pic_other.png" alt=""></div>
+                        <div class="inner-content">
+                            <ul>
+                                <li>领围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>头围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>中腰：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>大臀围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                            </ul>
+                            <div class="edit-btn" style="display: block" onclick="clickEdit(this)">编辑</div>
+                            <div class="finish-btn" onclick="clickFinish(this)">完成</div>
+                        </div>
+                        <div class="door-bott"><img src="./images/pic_body1.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination2"></div>
+        </div>
+    </div>
+
+</body>
+<script src="js/swiper-3.4.2.jquery.min.js"></script>
+	<script>
+	//检测webgl
+	if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+	/* 场景 */
+	var WIDTH = document.documentElement.offsetWidth || 800,
+		HEIGHT = document.documentElement.clientHeight || 600;
+	var scene = new THREE.Scene();
+	var windowHalfX = window.innerWidth / 2;
+	var windowHalfY = window.innerHeight / 2;
+	var	camera,renderer,controls,obj;
+
+	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+	
+	init();
+	/*初始化*/
+	function init(){
+		THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
+		    console.log( item, loaded, total );
+		};
+		//镜头
+		camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
+		camera.position.set( 0, 0, 20 );
+		scene.add(camera);
+		scene.fog=new THREE.Fog(0xffffff,0.015,100);
+		//渲染器
+		renderer = new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+		renderer.setSize(WIDTH , HEIGHT);
+		renderer.setClearColor( 0x03112c);
+		document.body.appendChild(renderer.domElement);
+		//控制器
+	 	controls = new THREE.OrbitControls( camera ,renderer.domElement);
+		controls.target.set( 0, 0, 0 );
+        controls.addEventListener( 'change', updateControls );
+        //灯光
+		var light = new THREE.DirectionalLight(0xffffff);
+		light.position.set(0, 0, 10).normalize();
+		scene.add(light);
+
+		//显示对象 
+		var material = new THREE.MeshBasicMaterial({ color: 0x4084d1,emissive:0x4084d1, wireframe: true }),obj;
+		var loader = new THREE.JSONLoader(true);
+
+	    loader.load("body.json", function ( geometry ) {
+	    	var loading = document.getElementById("progress");
+			loading.parentNode.removeChild(loading);
+			obj = new THREE.Mesh(geometry, material);
+			obj.scale.set(1,1,1);
+			obj.position.set(0,0,0);
+			scene.add(obj);
+			var delta = 1;
+			function anime(){
+				delta+= 0.01;
+				obj.rotation.y = delta;
+				renderer.render(scene, camera);
+				ani = requestAnimationFrame(anime);
+			};
+			ani = requestAnimationFrame(anime);
+			document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+			document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+			document.addEventListener( 'touchstart', onDocumentMouseDown, false );
+			document.addEventListener( 'touchend', onDocumentMouseUp, false );
+			var touchstart;
+			function onDocumentMouseDown( event ) {
+				cancelAnimationFrame(ani);
+			}
+			function onDocumentMouseUp( event2 ) {
+				anime();
+			}
+		});
+		
+	}
+	
+	function onDocumentMouseMove( event ) {
+		mouseX = ( event.clientX - windowHalfX ) * 10;
+		mouseY = ( event.clientY - windowHalfY ) * 10;
+		
+	}
+
+	/* 操作时更新画面 */
+    function updateControls() {
+            renderer.render( scene, camera );
+    }
+
+</script>
+<script src="js/index.js"></script>
+</html>

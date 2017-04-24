@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>SCAN-BOX</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <script>
+    ! function() {
+        function a() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b), b = setTimeout(a, 300)
+        }, !1), a()
+    }(window);
+    </script>
+</head>
+
+<body>
+    <!-- 个人信息卡片 -->
+    <div class="personal">
+        <div class="tabbar">
+            <ul class="tabbar-list">
+                <li class="tabbarBtn tabbar-active">个人</li>
+                <li class="tabbarBtn">好友数据</li>
+            </ul>
+        </div>
+        <div class="info-box">
+            <div class="info-initbox" style="display:block;">
+                <div class="info-head1">
+                    <div class="headimg1">
+                        <img src="./images/head.png" alt="">
+                    </div>
+                    <p>yingsdsd</p>
+                    <a href="page2.html" class="shuo-ming"><img src="./images/pic_5.png" alt=""></a>
+                </div>
+                <div class="info-card" hidden>
+                    <a href="scaning.html" class="click-scan">
+                        <img src="./images/pic_7.png" alt="">
+                        <span>开始扫描</span>
+                        <p>开始建立你的专属数据吧</p>
+                    </a>
+                </div>
+                <div class="info-card vis-sign">
+                    <a href="scaning.html" class="scan-again"><img src="./images/pic_12.png" alt=""></a>
+                    <ul class="data-list">
+                        <li>身高：<span>169cm</span></li>
+                        <li>体重：<span>169cm</span></li>
+                        <li>肩宽：<span>169cm</span></li>
+                        <li>胸围：<span>169cm</span></li>
+                        <li>腰围：<span>169cm</span></li>
+                        <li>臀围：<span>169cm</span></li>
+                        <li>袖长：<span>169cm</span></li>
+                        <li>裤长：<span>169cm</span></li>
+                        <li>鞋码：<span>169cm</span></li>
+                    </ul>
+                    <div class="suit-data"><span>合身指数：</span>
+                        <div class="line-data-bg">
+                            <div class="line-data"></div>
+                            <p><span>80</span>%</p>
+                        </div>
+                    </div>
+                    <div class="look-total look-total-btn">查看完整数据</div>
+                    <div class="appointment-num">想获得更精确的数据预约上门电话：<span>384957202</span></div>
+                </div>
+            </div>
+            <div class="info-initbox">
+                <div class="others-card">
+                    <div class="headimg2">
+                        <img src="./images/head.png" alt="">
+                    </div>
+                    <img class="oc-top" src="./images/other_top_line.png" alt="">
+                    <img class="oc-bott" src="./images/other_bott_line.png" alt="">
+                    <div class="others-data">
+                        <div class="part-data" style="display: block">
+                            <p><span>基础信息</span></p>
+                            <ul>
+                                <li>姓名：
+                                    <input type="text" name="">
+                                </li>
+                                <li>胸围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>年龄：
+                                    <input type="text" name="">
+                                </li>
+                                <li>腰围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_8"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>性别：
+                                    <input type="text" name="">
+                                </li>
+                                <li>臀围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>身高：
+                                    <input type="text" name="">
+                                </li>
+                                <li>鞋码：
+                                    <input type="text" name="">
+                                </li>
+                                <li>体重：
+                                    <input type="text" name="">
+                                </li>
+                                <li>穿着喜好：
+                                    <input type="text" name="">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="part-data">
+                            <p><span>上身尺寸</span></p>
+                            <ul>
+                                <li>领围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>头围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>中腰：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>大臀围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>肩宽：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>小臀围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>前肩宽：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>腕围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>前胸宽：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>后背宽：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="part-data">
+                            <p><span>下身/其他</span></p>
+                            <ul>
+                                <li>裤长围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>大腿围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>前胸宽：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>小腿围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>裤长围：
+                                    <input type="text" name="">
+                                    <div class="oc-wenhao" data-thisurl="pic_15"><img src="./images/ico_1.png" alt=""></div>
+                                </li>
+                                <li>戒指：
+                                    <input type="text" name="">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="oc-btn">
+                        <div class="slide-down-btn"><img src="./images/ico_2.png" alt=""></div>
+                        <div class="two-btns">
+                            <div class="oc-btn1">编辑</div>
+                            <a href="page1.html" class="oc-btn2">发送</a>
+                        </div>
+                        <div class="look-total oc-btn3" style="display: none">保存</div>
+                    </div>
+                </div>
+                <p class="tishi"><img src="./images/tishi.png" alt="">您可以填写亲友的身形数据，方便您帮其购买与定制</p>
+            </div>
+        </div>
+    </div>
+    <!-- 查看完整数据弹窗 -->
+    <div class="look-total-slide">
+        <a class="look-total-close">×</a>
+        <div class="swiper-container2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="door-box1">
+                        <div class="door-top"><img src="./images/pic_up_body.png" alt=""></div>
+                        <div class="inner-content">
+                            <ul>
+                                <li>领围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>头围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>中腰：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>大臀围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>肩宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>小臀围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>前肩宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>腕围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>前胸宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>后背宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                            </ul>
+                            <div class="edit-btn" style="display: block" onclick="clickEdit(this)">编辑</div>
+                            <div class="finish-btn" onclick="clickFinish(this)">完成</div>
+                        </div>
+                        <div class="door-bott"><img src="./images/pic_body1.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="door-box1">
+                        <div class="door-top"><img src="./images/pic_down_body.png" alt=""></div>
+                        <div class="inner-content">
+                            <ul>
+                                <li>肩宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>小臀围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>前肩宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>腕围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>前胸宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>后背宽：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                            </ul>
+                            <div class="edit-btn" style="display: block" onclick="clickEdit(this)">编辑</div>
+                            <div class="finish-btn" onclick="clickFinish(this)">完成</div>
+                        </div>
+                        <div class="door-bott"><img src="./images/pic_body1.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="door-box1">
+                        <div class="door-top"><img src="./images/pic_other.png" alt=""></div>
+                        <div class="inner-content">
+                            <ul>
+                                <li>领围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>头围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>中腰：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                                <li>大臀围：
+                                    <input type="text" name="" value="25cm">
+                                </li>
+                            </ul>
+                            <div class="edit-btn" style="display: block" onclick="clickEdit(this)">编辑</div>
+                            <div class="finish-btn" onclick="clickFinish(this)">完成</div>
+                        </div>
+                        <div class="door-bott"><img src="./images/pic_body1.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination2"></div>
+        </div>
+    </div>
+    <!-- 测量提示弹窗 -->
+    <div class="win-box-bg">
+        <div class="bg-white">
+            <img src="./images/pic_15.png" alt="">
+        </div>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/swiper-3.4.2.jquery.min.js"></script>
+<script src="./js/swiper.animate1.0.2.min.js"></script>
+<script src="./js/index.js"></script>
+
+</html>

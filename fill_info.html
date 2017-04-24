@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>SCAN-BOX</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <script>
+    ! function() {
+        function a() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(b), b = setTimeout(a, 300)
+        }, !1), a()
+    }(window);
+    </script>
+</head>
+
+<body>
+    <!-- 操作说明下一步后填写信息 -->
+    <form action="#" id="form1" method="post">
+        <div class="fill-info">
+            <div class="fi-head">请确认身高体重，并输入手机号开始扫描</div>
+            <ul class="fill-list">
+                <li><span>身高</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <input type="text" value="" name="" placeholder="厘米">
+                </li>
+                <li><span>体重</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <input type="text" value="" name="" placeholder="kg">
+                </li>
+                <li><span>性别</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <select name="" id="">
+                        <option value="">男</option>
+                        <option value="">女</option>
+                    </select>
+                </li>
+                <li><span>电话</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <input type="tel" value="" name="" placeholder="输入号码">
+                </li>
+            </ul>
+            <a href="personal_card.html" class="nextbtn fill-next">下一步</a>
+        </div>
+    </form>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+$(".fill-next").click(function() {
+    $("#form1").submit();
+})
+</script>
+
+</html>
